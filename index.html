@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WakeLab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+
+</head>
+
+<body>
+    <nav class="bg-[#89A482] border-b border-slate-700 ">
+        <div class="max-w-7xl mx-auto px-2 py-3 flex justify-between items-center gap-6">
+            <div>
+
+                <p class="font-bold text-[30px] text-white">Woke<span
+                        class="text-[#F6E7A6] text-[30px] font-bold">Lab</span></p>
+
+            </div>
+
+            <div class="bg-white rounded-full flex items-center px-5 py-3 w-full max-w-md">
+                <span class="text-gray-400 mr-3">⌕</span>
+
+                <input id="btnRecherche" bg-[#F6E7A6] type="text" placeholder="Rechercher un livre..."
+                    class="w-full outline-none text-gray-700 text-sm">
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="bg-[#89A482] text-white">
+
+        <div class="max-w-7xl mx-auto px-8 py-16 grid md:grid-cols-2 gap-12 items-center">
+
+            <div>
+                <p class=" text-xs font-bold tracking-widest mb-10 text-[#F6E7A6]">REVUE PEDAROGIQUE </p>
+                <h2 class="heading text-4xl md:text-5xl font-bold  mb-10">Activité <span
+                        class=" text-[#F6E7A6]">pedarogique</span> en classe</h2>
+                <p class=" text-sm mb-10">
+                    Activité permet de dynamiser le groupe, de mobiliser <br>
+                    ses connaissances ou de découvrir une notion de manière ludique.
+                </p>
+
+                <div class="flex gap-3 flex-wrap">
+
+                    <button id="btnTous"
+                        class="border border-slate-500 text-black bg-[#F6E7A6] px-5 py-2 rounded-full text-sm ">Tous</button>
+                    <button id="btnJeux"
+                        class="border border-slate-500 bg-white text-black px-5 py-2 rounded-full text-sm hover:bg-[#5C7057]">Jeux</button>
+                    <button id="btnApprentissage"
+                        class="border border-slate-500 bg-white text-black px-5 py-2 rounded-full text-sm hover:bg-[#5C7057]">Apprentissage</button>
+                    <button id="btnExercice"
+                        class="border border-slate-500 bg-white text-black px-5 py-2 rounded-full text-sm hover:bg-[#5C7057]">Exercice</button>
+                    <button id="btnAutre"
+                        class="border border-slate-500 bg-white text-black px-5 py-2 rounded-full text-sm hover:bg-[#5C7057]">Autre</button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <div class="flex justify-end px-4 py-8">
+        <button id="btnForm" class="  bg-teal-300 px-4 py-2 rounded-full hover:bg-teal-400">+ Ajouter une activité
+        </button>
+    </div>
+    <div id="affichageAll" class="grid sm:grid-cols-1 lg:grid-cols-3 gap-10 px-5 py-10">
+        <!--         
+        <div class="border border-slate-500 bg-white text-black px-5 py-2 rounded-xl">
+
+            <div class="flex justify-between justify-items px-5 py-2">
+                <p class="border bg-[#F6E7A6] text-black px-5 py-2 rounded-full text-sm w-30">apprentissage</p>
+                <p><i class="fa-regular fa-clock"></i> 10 min</p>
+            </div>
+
+            <p class=" bg-white text-red-700 px-5 py-2 rounded-full font-medium text-l">Le quiz éclair</p>
+            <div>
+                <p class=" bg-white text-black font-medium px-5 py-2 rounded-full text-sm ">Objectifs:</p>
+                <p class=" bg-white text-black px-5 py-2 rounded-full text-sm ">Vérifier les acquis du groupe</p>
+            </div>
+
+            <div>
+                <p class=" bg-white text-black px-5 py-2 font-medium rounded-full text-sm ">Description: </p>
+                <p class=" bg-white text-black px-5 py-2 rounded-full text-sm ">Les équipes construisent des questions
+                    puis interrogent une autre équipe à tour de rôle.</p>
+            </div>
+
+
+
+
+            <div class="flex justify-between gap-5 justify-items px-5 py-2">
+                <div>
+                    <p class=" bg-white text-green-700 border px-5 py-2 rounded-full text-sm ">Sara El Amrani</p>
+                </div>
+
+                <div class="flex justify-end gap-5 justify-items px-5 py-2">
+                    <button class="border bg-teal-300 text-black px-3 py-2 rounded-full text-sm w-10"><i
+                            class="fa-solid fa-pen"></i></button> 
+                    <button class="border bg-red-300 text-black px-3 py-2 rounded-full text-sm w-10"><i
+                            class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+
+
+
+        </div> -->
+
+    </div>
+
+
+
+
+
+
+
+    <div id="formAjoute" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center ">
+
+        <form id="formActivite" class="flex flex-col gap-5 p-5 rounded-xl bg-white w-[40%] h-[55%]">
+            <h2 class="font-bold text-lg">Nouvelle activité</h2>
+
+            <input type="text" id="titre" placeholder="Titre" required class="border px-3 py-2 rounded">
+            <select id="theme" type="text" required class="border px-2 py-2 rounded ">
+                <option value="" selected disabled>Theme</option>
+                <option value="jeux">Jeux</option>
+                <option value="apprentissage">Apprentissage</option>
+                <option value="exercice">Exercice</option>
+                <option value="autre">Autre</option>
+            </select>
+            <input type="text" id="duree" placeholder="Durée (min)" required class="border px-3 py-2 rounded">
+            <input id="objectifs" placeholder="Objectif d'activité" class="border px-3 py-2 rounded">
+            <input id="description" placeholder="Description d'activité" class="border px-3 py-2 rounded">
+
+
+            <div class="flex justify-end gap-3">
+                <button type="button" id="btnAnnuler" class="border px-4 py-2 rounded-full">Annuler</button>
+                <button type="submit" id="btnAjouter" class="bg-teal-300 px-4 py-2 rounded-full">Ajouter</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"> </script>
+</body>
+
+</html>
